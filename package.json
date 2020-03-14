@@ -16,16 +16,23 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn run lint",
-      "pre-push": "npm test",
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn test",
       "...": "..."
     }
   },
-  "list-staged":{
-    "*js": ["eslint --fix", "git add"]
+  "lint-staged": {
+    "*js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "devDependencies": {
     "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "6.2.3",
+    "eslint-plugin-react-hooks": "2.5.0",
     "husky": "^4.2.3",
     "nodemon": "^2.0.2",
     "sucrase": "^3.12.1"
